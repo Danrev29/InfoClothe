@@ -5,17 +5,12 @@ body {
   background-size: cover;
   margin: 0;
   background-color: black;
-
-}
-
-.container .image {
-  margin-left: 70px;
 }
 
 .container {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: space-between;
   height: 70px;
   position: fixed;
   background-color: rgb(44, 44, 44);
@@ -23,48 +18,54 @@ body {
   width: 100%;
   font-family: "FF Mark W05", Arial, sans-serif;
   font-size: 14px !important;
-    font-weight: bold;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.container .image img {
+  height: 60px;
+  width: auto;
 }
 
 .navbar {
-  float: right;
-  margin-left: 650px;
-}
-.navbar a:hover {
-  color:rgb(255, 255, 255);
-  border-bottom: 2px solid rgb(255, 255, 255)  ;
-
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .navbar ul {
-  margin: 0;
-  padding: 0;
+  display: flex;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar li {
-  display: inline;
-  margin: 0 20px;
+  margin: 0 10px;
 }
 
 .navbar li a {
   text-decoration: none;
   color: white;
   text-transform: uppercase;
+  padding: 10px;
+}
 
+.navbar li a:hover {
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .bg img {
   opacity: 0.9;
-  height: 900px;
   width: 100%;
-  
+  height: auto;
 }
 
 .foreground img {
   position: absolute;
   top: 50%; 
-  left: 52%; 
+  left: 50%; 
   transform: translate(-50%, -50%);
   z-index: 2; 
   opacity: 0.7;
@@ -73,54 +74,65 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 section { 
- 
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px 20px;
 }
+
+section h2 {
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .con p {
-  padding:10px;
+  padding: 10px;
   word-wrap: break-word;
   text-align: justify;
   text-justify: inter-word;
   font-size: 18px;
   text-indent: 30px;
- font-family: sans-serif;
-}
-.block2{
-color: white;
-}
-.block3 {
- background-color: white;
-}
-section .con {
-  margin: 100px;
-  
+  font-family: sans-serif;
 }
 
-section h2{
-  font-size: 30px;
-  text-align: center;
-  text-transform: uppercase;
-}
-h4 {
+.block2, .block2 p {
   color: white;
-  text-align: center;
-  font-size: 25px;
-   font-weight: bold;
 }
+
+.block3 {
+  background-color: white;
+}
+
+section .con {
+  margin: 50px;
+  max-width: 1200px;
+}
+
 section .cards {
   display: flex;
-
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 section .cards .text-card {
   background: white;
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
   position: relative;
-  display: inline-block;
+  flex-basis: 300px;
+  flex-grow: 1;
 }
+
+section .cards .text-card h3 {
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
 section .cards .text-card h3::after {
   content: '';
   position: absolute;
@@ -132,119 +144,184 @@ section .cards .text-card h3::after {
   pointer-events: none;
 }
 
-section .cards .text-card h3{
-  font-size: 20px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}  
-
-.reveal{
+.reveal {
   position: relative;
   transform: translateY(150px);
   opacity: 0;
   transition: all 1s ease;
 }
-.reveal.active{
+
+.reveal.active {
   transform: translateY(0px);
   opacity: 1;
 }
 
-.con hr {
-  margin: 10px;
-  width: 1120px;
-}
-.responsive{
-margin-top: 10px;
-  display: flex;
-  margin-bottom: 20px;
-}
-.gallery { 
-margin: 5px;
-width: 250px;
-
-}
-
-.gallery img {
-  width: 240px;
-  height: 200px;
-}
-.res{
-  margin: 5px;
-}
-.contact1{
+.contact1 {
   text-align: center;
   border-left: solid black 3px;
-  margin-left: 40px;
+  margin: 40px;
   border-right: solid black 3px;
-  margin-right: 40px;
+  padding: 20px;
 }
-.contact2{
+
+.contact2 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  margin: 20px 0;
 }
-.contact2 p{
-  margin-top: 30px;
- margin-left: 230px;
- margin-right: 230px;
+
+.contact2 p {
+  flex-basis: 100%;
+  margin: 0 20px;
 }
-.contact3{
-margin-bottom: 20px;
-font-weight: bold;
-padding: 20px;
+
+.contact3 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  padding: 20px;
+  flex-basis: 200px;
 }
- h1{
-  font-size: 20px ;
-}
-.contact3 a{
+
+.contact3 a {
   text-decoration: none;
   color: black;
 }
-.contact3 a:hover{
+
+.contact3 a:hover {
   border-bottom: solid 2px black;
 }
-.contact4{
+
+.contact4 {
   margin-bottom: 30px;
   display: flex;
-justify-content: center;
+  justify-content: center;
+  align-items: center;
 }
-.contact4 img{
+
+.contact4 img {
   margin-right: 5px;
 }
-.contact4 p{
+
+.contact4 p {
   font-family: sans-serif;
   font-size: 13px;
 }
-.about1{
-  margin-left:50px;
-  margin-right: 50px;
+
+.about1 {
+  margin: 20px;
 }
-.about2{
-margin-bottom: 50px;
-margin-left: 150px;
-margin-right: 150px;
-}
-h5 {
-  font-size: 23px ;
-  margin-left: 200px;
-}
-.about2{
+
+.about2 {
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding: 10px;
   border-top: solid white 2px;
   border-left: solid white 2px;
   border-right: solid white 2px;
-  padding: 10px;
-}
-.about2 p{
-font-size: 19px;
-}
-@media screen and (min-width: 800px) { 
-    body {
-        background-color: lightblue;
-    }
 }
 
-@media screen and (max-width: 800px) { 
-    body {
-        background-color: yellow;
-    }
+h5 {
+  font-size: 23px;
+  text-align: center;
+}
+
+.about2 p {
+  font-size: 19px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .navbar li {
+    margin: 0 5px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bg img {
+    height: auto;
+  }
+
+  .section .cards {
+    flex-direction: column;
+  }
+
+  section .cards .text-card {
+    margin: 10px 0;
+  }
+
+  .contact2 p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .about1 {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .about2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 5px 0;
+  }
+
+  section .cards .text-card {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .contact2 p {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .about2 {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  .about2 p {
+    font-size: 16px;
+  }
 }
